@@ -9,7 +9,7 @@
 		public function hookAfterSaveItem($args) {
 			$item = $args['record'];
 			$searchText = get_db()->getTable('SearchText')->findByRecord('Item', $item->id);
-			$pbCoreTitle = metadata($item, array('GATE', 'GATE Title')); 
+			$pbCoreTitle = metadata($item, array('Leeds-GATE element set', 'GATE Title')); 
 			$searchText->title = $pbCoreTitle;
 			$searchText->save();
 			}
@@ -28,7 +28,7 @@
        $request = Zend_Controller_Front::getInstance()->getRequest();
            // Replace title field here.
            $item = $args['record'];
-           $title = metadata($item, array('GATE', 'GATE Title'));
+           $title = metadata($item, array('Leeds-GATE element set', 'GATE Title'));
        return $title;
         }
     }
